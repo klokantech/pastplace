@@ -1,0 +1,11 @@
+name: PastPlace
+
+permalink: pretty
+baseurl: ""
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      layout: "default"

@@ -1,0 +1,37 @@
+/* Fonts  */
+
+@font-face {
+  font-family: 'droidsans';
+  src: url('fonts/droidsans.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'droidsans';
+  src: url('fonts/droidsans-bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'icons';
+  src: url('fonts/icons.eot');
+}
+
+@font-face {
+  font-family: 'icons';
+  src: url('fonts/icons.woff') format('woff');
+}
+
+.icon, [class^='icon-'], [class*=' icon-']{
+  font-family: 'icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
+}

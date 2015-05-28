@@ -1,0 +1,215 @@
+/* Navbar */
+
+#navbar-top{
+  @extend .clearfix;
+  position: relative;
+  height: $navbar-top-height;
+  margin-bottom: $navbar-top-margin-bottom;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: $navbar-top-zindex;
+  top: 0;
+  border-width: 0 0 1px;
+  background-color: $navbar-top-bgcolor;
+
+  .logo{
+    float: left;
+    height: $navbar-top-height;
+    margin: 0 $padding-x;
+    h1{
+      font-size: $navbar-top-title-size;
+      height: $navbar-top-height;
+      padding-top: $navbar-top-height - $navbar-top-title-size - $navbar-top-title-padding-bottom;
+      padding-right: $padding-x / 2;
+      padding-bottom:  $navbar-top-title-padding-bottom;
+      padding-left: $padding-x / 2;
+      margin: 0;
+      white-space: nowrap;
+      a{
+        color: $navbar-top-title-color;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .nav{
+    float: right;  
+    padding: 0 $padding-x;
+    li{display: inline-block;} 
+    a{
+      color: $navbar-top-link-color;
+      text-decoration: none;
+      font-size: $navbar-top-link-size;
+      height: $navbar-top-height;
+      display: inline-block;
+      padding-top: $navbar-top-height - $navbar-top-link-size - $navbar-top-menu-padding-bottom;
+      padding-right: $navbar-top-link-padding;
+      padding-bottom:  $navbar-top-menu-padding-bottom;
+      padding-left: $navbar-top-link-padding;
+      line-height: 1;
+      font-weight: bold;
+      &:hover, &:focus, &.active{
+        color: $navbar-top-link-hover-color;
+      }
+    }
+    @media (max-width: $sc-medium) {
+      display: none;
+    }
+  }
+  .nav-mobile{
+    @media (min-width: $sc-medium) {
+      display: none;
+    }
+    @media (max-width: $sc-medium) {
+      display: block;
+    }
+    padding: ($navbar-top-height / 2) - 30;
+    font-size: 30px;
+    float: right;
+    #nav-mobile-btn{
+      &:hover, &:active{
+        cursor: pointer;
+      }
+      &.active{
+        color: #ffffff;
+        border-bottom: 5px solid $color-primary;
+        margin: 0;
+      }
+    }
+    &::selection, &::-moz-selection{
+      background: transparent;
+    }
+
+    #nav-mobile-nav{
+      display: none;
+      background-color: #ffffff;
+      position: absolute;
+      top: $navbar-top-height;
+      left: 0;
+      right: 0;
+      list-style-type: none;
+      font-size: $navbar-top-link-size;
+      padding:  $padding-x / 2 $padding-x 0 $padding-x 0;
+      border-bottom: 1px solid $color-gray-dark;
+      margin: 0;
+      li a{
+        padding: $padding-x;
+        display: block;
+        border-bottom: 1px solid $color-gray-light;
+        &:hover, &:active{
+          list-style-type: none;
+          text-decoration: none;
+          background-color: $color-gray-light;
+        }
+      }
+      &.active{
+        display: block !important;
+      }
+    }
+  }
+}
+
+#navbar-top-small{
+  @extend #navbar-top;
+  height: $navbar-top-height * 0.6;
+  .logo{
+    h1{
+      font-size: $navbar-top-title-size * 0.6;
+      height: $navbar-top-height * 0.6;
+      padding: 0;
+      padding-top:  ($navbar-top-height - $navbar-top-title-size - $navbar-top-title-padding-bottom) * 0.6;
+      padding-bottom:  $navbar-top-title-padding-bottom * 0.6;
+    }  
+  }
+  .nav{
+    a{
+      height: $navbar-top-height * 0.6;
+      padding-top:  ($navbar-top-height * 0.6 - $navbar-top-link-size) / 2;
+      padding-bottom:  $navbar-top-title-padding-bottom * 0.6; 
+    }
+  }
+  .nav-mobile{
+    #nav-mobile-nav{
+      top: $navbar-top-height * 0.6;
+    }
+  }
+}
+
+/* MapTiler navbar */
+#mt-nav{
+  display: inline-block;
+  margin: 22px 0 22px 0;
+  float: right;
+  ul{
+    margin: 0; 
+    padding: 0;
+    li{
+      list-style-type: none;
+      display: inline-block;
+      padding: 15px 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+      a{
+        color: #fff;
+        &:hover{
+          text-decoration: none; 
+          color: #fff;
+          border-bottom: 2px solid #fff;
+        }
+      }
+      .btn-stroke-white{text-transform: capitalize;}
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  #mt-nav ul li {
+    padding: 15px 10px !important;
+  } 
+}
+
+/* Klokantech navbar */
+#navbar-kl {
+  text-align: center; 
+  background-color: #f6f6f6; 
+  padding: 0; margin: 0;
+  ul{
+    font-size: 0; 
+    line-height: 14px; 
+    min-height: 34px;
+    li{
+      font-size: 14px; 
+      display: inline; 
+      list-style-type: none; 
+      margin: 0;
+      a{
+        display: inline-block; 
+        color: #a8a8a8; 
+        min-height: 34px; 
+        padding: 10px 15px;
+        -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; -ms-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in;
+        &:hover{
+          background: #ededed; 
+          text-decoration: none;}
+      }
+      &.active a{background-color: #ededed; color: #00549a;}
+    }
+  }
+}
+/* simple mobile nav */
+#nav-mobile-nav{
+  display: none; 
+  li a{display: block; width: 100%;}
+}
+#nav-mobile-btn{ min-height: 34px; cursor: pointer; font-family: 'icons';
+}
+@media (min-width: 768px) { 
+  #nav-mobile-btn{display: none;}
+}
+@media (max-width: 768px) { 
+  #nav-mobile-nav.active{ display: block; }  
+  #navbar-kl .nav, #mt-nav ul{display: none;}
+}

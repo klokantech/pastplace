@@ -1,0 +1,55 @@
+/* Table */
+
+table{
+  width: 100%; 
+  border-spacing: inherit;
+  td{
+    text-decoration: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: inherit;
+    font-size: 100%;
+    color: $table-color;
+    padding: $table-padding;
+    display: table-cell; 
+  }
+  tr, th{
+    border-top: 1px solid $table-color-border;
+
+    &:hover{background: $table-hover-color;}
+    a{
+      &:hover{
+        cursor: pointer;
+        text-decoration: none;
+        color: lighten($color-primary, 10%);
+      }
+    }
+  }
+  th, thead, tfoot{
+    color: $table-color;
+    font-size: $table-fontsize;
+    font-weight: bold;
+    background: $table-head-bg;
+    cursor: default;
+  }
+  .clear{
+    font-weight: normal;
+    background: transparent;
+    &:hover{
+      background-color: transparent;
+    }
+    tr, th{
+      border-top: none;
+      border-bottom: none;
+    }
+  }
+  tfoot{
+    border-bottom: 1px solid $table-color-border;
+  }
+
+  &.grid{
+    td{
+      border: 1px solid $table-color-border;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<div class="nav-sec">
+  <div class="row">
+    <div class="col12 center">
+      <div class="btns">
+          <a {% if page.id == 'location' %}class="open"{% endif %} href="/place/location/">
+            <span class="icon">G </span> <span class="mobile-no">Location</span>
+          </a>
+          <a {% if page.id == 'units' %}class="open"{% endif %} href="/place/units/">
+            <span class="icon">c </span> <span class="mobile-no">Units</span>
+          </a>
+          <a {% if page.id == 'links' %}class="open"{% endif %} href="/place/links/">
+            <span class="icon">l </span> <span class="mobile-no">Links</span>
+          </a>
+          <a {% if page.id == 'names' %}class="open"{% endif %} href="/place/names/">
+            <span class="icon">8 </span> <span class="mobile-no">Names</span>
+          </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col12 pad-0">
+    <div class="row">
+      <div class="side-bar">
+        <form>
+          <input type="text">
+        </form>
+        <div class="nav-sec-vert">
+          <a {% if page.id == 'location' %}class="open"{% endif %} href="/place/location/">
+            <span class="icon">G </span> Location
+          </a>
+          <a {% if page.id == 'units' %}class="open"{% endif %} href="/place/units/">
+            <span class="icon">c </span> Units
+          </a>
+          <a {% if page.id == 'links' %}class="open"{% endif %} href="/place/links/">
+            <span class="icon">l </span> Links
+          </a>
+          <a {% if page.id == 'names' %}class="open"{% endif %} href="/place/names/">
+            <span class="icon">8 </span> Names
+          </a>
+        </div>
+        <p class="big">Is something wrong?</p>
+        <div class="round bg-light padx-2 padt-2 padb-1 width-100">
+          <a class="btn-blue width-100">Report</a>
+          <p class="small" >a wrong location of place</p>
+        </div>
+        <div class="add-vertical"><p class="pady-10">Add<br>vertical</p></div>
+      </div>
+      <div class="content">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>

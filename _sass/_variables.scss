@@ -1,0 +1,194 @@
+/* Colors */
+$color-primary: #574f45;
+$color-secondary: #a97b50;
+
+$color-gray-dark: #a29d97;
+$color-gray: #898989;
+$color-gray-light: #f3f3f3;
+
+$color-success: #00AA4A;
+$color-warning: #EF8A00;
+$color-danger: #EF3200;
+$color-code: #dd1144;
+
+/* Background color */
+$body-bg:  #eee8e3;
+
+/* Global text color */
+$text-color: $color-gray !default;
+
+/* Links color */
+$link-color: #199bb6;
+$link-hover-color: lighten(#199bb6, 8%);
+
+/* Fonts */
+$font-primary: 'droidsans', Arial;
+$font-secondary: 'droidsans', sans-serif;
+$font-monospace: Menlo, Monaco, 'Courier New', monospace;
+$font-icon: Menlo, Monaco, 'Courier New', monospace;
+$font-size: 14px !default;
+
+/* Line height*/
+$line-height: 1.428571429 !default; // 20/14
+/* Computed line-height (`font-size` * `line-height`) */
+$line-height-computed: floor(($font-size * $line-height)) !default; // ~20px
+
+
+/* Headings */
+$headings-font-weight-h1: normal;
+$headings-font-family: $font-primary;
+$headings-font-weight: normal;
+$headings-line-height: 100%;
+$headings-color: $color-primary;
+
+$font-size-h1: 40px !default;
+$font-size-h2: 30px !default;
+$font-size-h3: 20px !default;
+$font-size-h4: 16px !default;
+$font-size-h5: $font-size !default;
+$font-size-h6: 12px !default;
+
+$code-color-bg: $color-gray-light;
+$code-color: $color-gray-dark;
+$code-padding: 2px 6px;
+
+/* Padding, margin */
+$padding-y: 15px;
+$padding-x: 15px;
+
+/* Container */
+$container-max: 1200px;
+$container-width: 100%;
+$container-padding-x: 0;
+$container-padding-y: 0;
+
+/* Grid */
+//screen sizes
+$sc-small: 480px;
+$sc-medium: 768px;
+$sc-large: 992px;
+
+$grid-sizes: ( 
+// name: width
+col1: 8.3333,
+col2: 16.6666,
+col3: 25.0000,
+col4: 33.3333,
+col5: 41.6666,
+col6: 50.0000,
+col7: 58.3333,
+col8: 66.6666,
+col9: 75.0000, 
+col10: 83.3333, 
+col11: 91.6666, 
+col12: 100, 
+);
+
+$grid-paddnig-x: $padding-x;
+$grid-padding-y: $padding-y;
+$grid-margin-x: 0;
+$grid-margin-y: 0;
+
+/* Helpers */
+/* Corners for rounding */
+$radius-all: 5px;
+$radius-top-left: $radius-all;
+$radius-top-right: $radius-all;
+$radius-bottom-right: $radius-all;
+$radius-bottom-left: $radius-all;
+
+/* Buttons */
+$btn-color-bg: $color-primary;
+$btn-color: #fff;
+$btn-height: 40px;
+$btn-padding: 8px;
+$btn-radius: 4px;
+$btn-font-size: 14px;
+
+$btn-border: 2px;
+$btn-small-scale: 0.8;
+
+/* butons colection */
+$btns: (
+//name, color, background-color, hover color, hover background
+("", #ffffff, $color-primary, #ffffff, lighten($color-primary, 10%)),
+("-blue", #fff, #199bb6, #fff, lighten(#199bb6, 10%)),
+("-secondary", #ffffff,  $color-secondary, #ffffff,  lighten($color-secondary, 10%))
+);
+
+$btns-bg-color: #fff;
+$btns-pads: 3px 20px 5px 15px;
+$btns-border: 1px solid #978d86;
+$btns-bg-color: #fff;
+$btns-radius: 4px;
+
+$btns-hover-bg: $color-primary;
+$btns-hover-color: #fff;
+
+/* Border */
+$borders: (
+//('name', 'size', 'type', 'color')
+('primary', 1px, solid, $color-primary),
+('gray-dark', 1px, solid, $color-gray-dark),
+('gray', 1px, solid, $color-gray),
+('gray-light', 1px, solid, $color-gray-light),
+('black', 1px, solid, #ffffff)
+);
+
+$border-radius: 5px !default;
+$border-radius-large: 10px !default;
+$border-radius-small: 3px !default;
+
+$hr-color: $text-color;
+
+/* Table */
+
+$table-color: #393939;
+$table-head-bg: $color-gray-light;
+$table-color-border: mix($color-gray-dark, $color-gray-light);
+$table-fontsize: $font-size;
+$table-hover-color: $color-gray-light;
+$table-padding: 10px;
+
+
+/* Forms */
+$input-color: $text-color;
+$input-line-height: 20px;
+$input-font-size: 15px;
+$input-height: 30px;
+$input-height-small: 20px;
+$input-bg: #ffffff;
+$input-bg-disabled: $color-gray-light;
+$input-border-color: $input-color;
+$input-border-radius: 0;
+$input-padding-y: 10px;
+$input-padding-x: 10px;
+
+$legend-color: $color-gray-dark;
+
+/* Navbar top */
+$navbar-top-height: 95px;
+$navbar-top-margin-bottom: 0;
+
+$navbar-top-zindex: 100;
+$navbar-top-bgcolor: #eaded4;
+$navbar-top-title-padding-bottom: 6px;
+$navbar-top-menu-padding-bottom: 42px;
+
+$navbar-top-title-size: 0;
+$navbar-top-title-color: $color-primary;
+
+$navbar-top-link-color: $color-primary;
+$navbar-top-link-size: 14px;
+$navbar-top-link-padding: 20px;
+$navbar-top-link-hover-color: $color-secondary;
+
+
+/* Sticky footer */
+$footer-color: #ffffff;
+$footer-color-bg: $color-gray-dark;
+$footer-link-color: #ffffff;
+$footer-link-hover-color: lighten($color-primary, 10%);
+$footer-link-hover-decoration: none;
+$footer-height: 58px;
+$footer-fontweight: bold;

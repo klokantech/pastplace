@@ -1,0 +1,41 @@
+---
+title: Home
+---
+
+<div id="card" class="closed">
+  <h3>Newport, Shoropshire</h3>
+  <p>United Kingdom, Europe</p>
+  <a href="/place/location/" class="card-link">tap to see more</a>
+</div>
+<div id="welcome">
+  <img src="/img/pastplace-logo-large.png" alt="PastPlace logo">
+  <p class="big">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+    Maecenas dignissim molestie turpis</p>
+  <a class="btn-secondary" href="/search/">SEARCH PLACE</a> 
+  <a id="welcome-btn-map" class="btn" href="#">BROWSE MAP</a>
+</div>
+<div id="map" class="map-browse"></div>
+<div id="search-bottom" class="closed">
+  <form>
+    <input type="text">
+  </form>
+</div>
+<div id="adds-bottom">
+  <p>Google Adds</p>
+</div>
+
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+<script src="/js/map.js"></script>
+
+<script>
+  document.getElementById('welcome-btn-map').onclick = function(){
+    document.getElementById('welcome').className += 'closed';
+    document.getElementById('search-bottom').className = '';
+    document.getElementById('card').className = '';
+    return false;
+  };
+    document.getElementById('card').onclick = function(){
+      this.className = 'closed';
+    };
+</script>

@@ -1,0 +1,78 @@
+---
+title: Home
+id: api
+title: PastPlace Gazetteer Search AP
+---
+
+<h1>PastPlace Gazetteer Search API</h1>
+If you were expecting search results rather than this page, you
+mis-specified the parameters. The options are:
+<ul>
+  <li><b>q</b>: The query string. This can be a place name, a place
+    id, or a coordinate pair. In the latter case, you either use the
+    parameter twice (i.e. search?q=<i>lon</i>&q=<i>lat</i>), or you use a
+    comma to separate them (i.e. search?q=<i>lon</i>,<i>lat</i>). Please
+    note that in either case you need to specify first the longitude and
+    then latitude (both in WGS84, decimal degree).</li>
+  <li><b>container</b>: If you search by place name, you can
+    specify a container (such as county name, etc.).</li>
+  <li><b>mode</b>: Specify either &quot;fuzzy&quot; (default) or
+    &quot;precise&quot; when you search by place name to search for name
+    variants or exact place name, respectively.</li>
+  <li><b>type</b>: Specify either &quot;place&quot; (default) or
+    &quot;unit&quot; to query for a place or administrative unit by name
+    or ID (name search not implemented yet for units), respectively.</li>
+  <li><b>verbose</b>: Specify either &quot;true&quot; (default) or
+    &quot;false&quot; when searching for a place to return detailed
+    search results (including gazetteer text, nearby places and contained
+    units) or concise search results, respectively.</li>
+  <li><b>format</b>: Specify &quot;xml&quot; to receive the search
+    result as XML data (default), &quot;html&quot; to have the search
+    result printed as a HTML table, &quot;rdf&quot; to receive the result
+    as RDF/XML, &quot;n3&quot; to receive N3/Turtle data, or
+    &quot;json&quot; to have a JSON data array returned.</li>
+  <li><b>json_callback</b>: Specifies a JSON callback function
+    name. If you specified to have your result returned as JSON, the
+    parameter value will be wrapped around it.</li>
+</ul>
+<p>&nbsp;</p>
+<p>
+  <b>Examples:</b>
+</p>
+<ol>
+  <li><tt>http://data.pastplace.org/search?q=portsmouth&format=xml&mode=precise</tt>
+  &mdash; queries the place name &quot;portsmouth&quot; and returns the
+  result as XML data.</li>
+<li><tt>http://data.pastplace.org/search?q=portsmouth&format=xml&mode=precise&container=hampshire</tt>
+&mdash; queries the place name &quot;portsmouth&quot; in the
+container named &quot;hampshire&quot; and returns the result as XML
+data.</li>
+<li><tt>http://data.pastplace.org/search?q=portsmouth&format=xml&container=hampshire</tt>
+&mdash; queries the place name &quot;portsmouth&quot; and name
+variants in the container named &quot;hampshire&quot; and returns the
+result as XML data.</li>
+<li><tt>http://data.pastplace.org/search?q=portsmouth&format=json&json_callback=my_callback_func</tt>
+&mdash; queries the place name &quot;portsmouth&quot; and name
+variants and returns the result as JSON data array, using
+&quot;my_callback_func&quot; as call back, i.e. the returned value is
+<tt>
+  my_callback_func(<i>JSON data</i>)
+</tt>.</li>
+<li><tt>http://data.pastplace.org/search?q=-1.7,50.8</tt> &mdash;
+queries for the nearest 20 places for the specified coordinates
+(longitude=-1.7, latitude=50.8) and sends you to the HTML result
+page.</li>
+<li><tt>http://data.pastplace.org/search?q=-1.7&q=50.8&format=html</tt>
+&mdash; same as the above, but with <b>q</b> specified twice.</li>
+<li><tt>http://data.pastplace.org/search?q=429&format=xml</tt>
+&mdash; queries the place ID &quot;429&quot; and returns the result
+as XML data.</li>
+<li><tt>http://data.pastplace.org/search?q=10200246&type=unit&format=xml</tt>
+&mdash; queries the unit ID &quot;10200246&quot; and returns the
+result as XML data.</li>
+</ol>
+<p>&nbsp;</p>
+<p>
+  &copy; 2004&mdash;2012 <a href='http://www.gbhgis.org'>GBHGIS</a> and
+  <a href='http://www.port.ac.uk'>University of Portsmouth, UK</a>
+</p>

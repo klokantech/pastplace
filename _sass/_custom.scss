@@ -1,0 +1,209 @@
+#navbar-top {
+  border-bottom: 1px $color-primary solid;
+  background: #f3ede8;
+  background: -moz-linear-gradient(top, #f3ede8 0%, #ede3db 19%, #e9ddd3 31%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #f3ede8), color-stop(19%, #ede3db), color-stop(31%, #e9ddd3));
+  background: -webkit-linear-gradient(top, #f3ede8 0%, #ede3db 19%, #e9ddd3 31%);
+  background: -o-linear-gradient(top, #f3ede8 0%, #ede3db 19%, #e9ddd3 31%);
+  background: -ms-linear-gradient(top, #f3ede8 0%, #ede3db 19%, #e9ddd3 31%);
+  background: linear-gradient(to bottom, #f3ede8 0%, #ede3db 19%, #e9ddd3 31%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3ede8', endColorstr='#e9ddd3', GradientType=0 );
+}
+
+.side-bar{
+  display: none;
+  background-color: #f4eee9;
+  width: 26%; float: left;
+  padding: 20px 3% 0 3%;
+  text-align: center;
+  padding-bottom: 300px;
+}
+
+.nav-sec-vert{
+  margin: 10px 0 20px 0;
+  text-align: left;
+
+  & a{
+    color: $text-color;
+    display: block;
+    width: 100%;
+    padding: 8px 0 8px 5px;
+    border-bottom: 1px solid #ddd6d1;
+
+    &:hover, &.open {
+      text-decoration: none;   
+      color: $color-primary;
+    }
+    .icon{
+      color: $color-secondary;
+    }
+  }
+}
+
+.content{
+  .text{
+    padding: 3%;
+    h3{
+      margin-top: 0;
+    }
+  }
+}
+
+.logo img{
+  width: 110px;
+  height: 45px;
+  margin: 20px 0 0 25px;
+}
+
+.nav-sec{
+  background-color: #d7ccc8;
+  box-shadow: #999 0 0 5px 0;
+}
+
+#adds-bottom{
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 95px;
+  background-color: #fff;
+  text-align: center;
+  padding: 30px;
+}
+
+.add-vertical{
+  background-color: #fff;
+  margin: 20px auto;
+  display: block;
+  width: 180px; height: 480px;
+}
+
+.map-browse{
+  position: absolute;
+  top: 95px; bottom: 80px;
+  left: 0; right: 0;
+}
+.map-location{
+  width: 100%; 
+  height: 240px;
+}
+
+#welcome{
+  position: absolute;
+  top: 95px; bottom: 80px;
+  left: 0; right: 0;
+  background: #d7d0c5;
+  background: linear-gradient(rgba(243,237,232, 0.4),rgba(243,237,232,1));
+  background-image: linear-gradient(rgba(243,237,232, 0.4), rgba(243,237,232, 1));
+  z-index: 50;
+  text-align: center;
+  padding: 120px 0 0 0;
+
+  &.closed{display: none;}
+
+  #welcome-btn-map{margin-left: 15px;}
+
+  img{
+    margin-bottom: 20px;
+    width: 270px;
+    height: 110px;
+  }
+
+  p{
+    padding-bottom: 40px;
+    color: $color-primary;
+  }
+}
+
+#search-bottom{
+  position: absolute;
+  display: block;
+  left: 0; right: 0;
+  bottom: 95px;
+  height: 60px;
+  background-color: rgba(243,237,232, 0.8);
+  transition: bottom .6s ease;
+  text-align: center;
+  padding-top: 15px;
+
+  &.closed{
+    bottom: 35px;
+  }
+}
+
+#card{
+  position: absolute;
+  width: 360px;
+  margin-left: -180px;
+  left: 50%;
+  top: 120px;
+  background-color: rgba(243,237,232, 0.8);
+  border-radius: 5px;
+  z-index: 50;
+  border: 1px solid $color-primary;
+  box-shadow: #999 0 0 5px;
+  text-align: center;
+
+  .card-link{
+    display: block;
+    margin: 0 0 -1px -1px;
+    width: 360px;
+    border-top: 1px solid $color-primary;
+    background-color: rgba(243,237,232, 0.8);
+    padding: 5px 0;
+    border: 1px solid $color-primary;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  &.closed{display: none;}
+}
+
+@media (min-width: $sc-small) {
+
+  .content{width: 100%;}
+
+}
+@media (min-width: $sc-medium) {
+  /*  #navbar-top{
+      border-bottom: 10px $color-primary solid;
+    }*/
+}
+@media (min-width: $sc-large) {
+  #navbar-top{
+    border-bottom: 10px $color-primary solid;
+  }
+  .nav-sec{
+    display: none;  
+  }
+  .side-bar{
+    display: inline-block; 
+  }
+  .content{width: 74%; float: left;}
+}
+
+/* Helpers */
+
+@media (max-width: $sc-medium) {
+  .mobile-no{
+    display: none;
+  }
+  .mobile{
+    display: inline-block;
+  }
+}
+@media (min-width: $sc-small) {
+  .mobile-no{
+    display: inline-block;
+  }
+  .mobile{
+    display: none;
+  }
+}
+
+.bg-light{
+  background-color: #ddd6d1;
+}
+
+.icon{
+  vertical-align: sub;
+}
