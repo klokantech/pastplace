@@ -6,18 +6,18 @@ layout: default
   <div class="row">
     <div class="col12 center">
       <div class="btns">
-          <a {% if page.id == 'location' %}class="open"{% endif %} href="{{site.baseurl}}/place/location/">
-            <span class="icon">G </span> <span class="mobile-no">Location</span>
-          </a>
-          <a {% if page.id == 'units' %}class="open"{% endif %} href="{{site.baseurl}}/place/units/">
-            <span class="icon">c </span> <span class="mobile-no">Units</span>
-          </a>
-          <a {% if page.id == 'links' %}class="open"{% endif %} href="{{site.baseurl}}/place/links/">
-            <span class="icon">l </span> <span class="mobile-no">Links</span>
-          </a>
-          <a {% if page.id == 'names' %}class="open"{% endif %} href="{{site.baseurl}}/place/names/">
-            <span class="icon">8 </span> <span class="mobile-no">Names</span>
-          </a>
+        <a {% if page.id == 'location' %}class="open"{% endif %} href="{{site.baseurl}}/place/location/">
+          <span class="icon">G </span> <span class="mobile-no">Location</span>
+        </a>
+        <a {% if page.id == 'units' %}class="open"{% endif %} href="{{site.baseurl}}/place/units/">
+          <span class="icon">c </span> <span class="mobile-no">Units</span>
+        </a>
+        <a {% if page.id == 'links' %}class="open"{% endif %} href="{{site.baseurl}}/place/links/">
+          <span class="icon">l </span> <span class="mobile-no">Links</span>
+        </a>
+        <a {% if page.id == 'names' %}class="open"{% endif %} href="{{site.baseurl}}/place/names/">
+          <span class="icon">8 </span> <span class="mobile-no">Names</span>
+        </a>
       </div>
     </div>
   </div>
@@ -26,8 +26,9 @@ layout: default
   <div class="col12 pad-0">
     <div class="row">
       <div class="side-bar">
-        <form>
-          <input type="text">
+        <form action="/search/" method="get">
+          <input type="text" placeholder="Search place">
+          <input type="submit" class="inside icon" value="Q">
         </form>
         <div class="nav-sec-vert">
           <a {% if page.id == 'location' %}class="open"{% endif %} href="{{site.baseurl}}/place/location/">
@@ -43,12 +44,11 @@ layout: default
             <span class="icon">8 </span> Names
           </a>
         </div>
-        <p class="big">Is something wrong?</p>
+        <p class="bigger primary padt-2">Is something wrong?</p>
         <div class="round bg-light padx-2 padt-2 padb-1 width-100">
           <a class="btn-blue width-100">Report</a>
-          <p class="small" >a wrong location of place</p>
+          <p class="small padt-1" >a wrong location of place</p>
         </div>
-        <div class="add-vertical"><p class="pady-10">Add<br>vertical</p></div>
       </div>
       <div class="content">
         {{ content }}

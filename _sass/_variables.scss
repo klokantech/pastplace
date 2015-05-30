@@ -12,7 +12,7 @@ $color-danger: #EF3200;
 $color-code: #dd1144;
 
 /* Background color */
-$body-bg:  #eee8e3;
+$body-bg:  #eadfd8;
 
 /* Global text color */
 $text-color: $color-gray !default;
@@ -91,7 +91,7 @@ $grid-margin-y: 0;
 
 /* Helpers */
 /* Corners for rounding */
-$radius-all: 5px;
+$radius-all: 4px;
 $radius-top-left: $radius-all;
 $radius-top-right: $radius-all;
 $radius-bottom-right: $radius-all;
@@ -117,7 +117,7 @@ $btns: (
 );
 
 $btns-bg-color: #fff;
-$btns-pads: 3px 20px 5px 15px;
+$btns-pads: 2px 15px 3px 15px;
 $btns-border: 1px solid #978d86;
 $btns-bg-color: #fff;
 $btns-radius: 4px;
@@ -154,13 +154,13 @@ $table-padding: 10px;
 /* Forms */
 $input-color: $text-color;
 $input-line-height: 20px;
-$input-font-size: 15px;
+$input-font-size: 16px;
 $input-height: 30px;
 $input-height-small: 20px;
 $input-bg: #ffffff;
 $input-bg-disabled: $color-gray-light;
-$input-border-color: $input-color;
-$input-border-radius: 0;
+$input-border-color: #ffffff;
+$input-border-radius: 4px;
 $input-padding-y: 10px;
 $input-padding-x: 10px;
 
