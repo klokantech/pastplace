@@ -158,6 +158,11 @@
   &.closed{display: none;}
 }
 
+.page{
+  background-color: #f4eee9; 
+  border: 1px solid #978d86;
+}
+
 @media (min-width: $sc-small) {
 
   .content{width: 100%;}

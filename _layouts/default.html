@@ -17,27 +17,29 @@
     <div id="navbar-top">
       <div class="container">
         <div class="logo">
-          <img src="/img/pastplace-logo.png" alt="PasPlace logo">
+          <a href="{{site.baseurl}}/">
+            <img src="{{site.baseurl}}/img/pastplace-logo.png" alt="PasPlace logo">
+          </a>
         </div>
         <ul class="nav">
-          <li><a href="/">Browse</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/api">Api</a></li>
-          <li><a href="/aontct">Contact</a></li>
+          <li><a href="{{site.baseurl}}/">Browse</a></li>
+          <li><a href="{{site.baseurl}}/about">About</a></li>
+          <li><a href="{{site.baseurl}}/api">Api</a></li>
+          <li><a href="{{site.baseurl}}/aontct">Contact</a></li>
         </ul>
         <div class="nav-mobile">
           <div id="nav-mobile-btn">#</div>
           <ul id="nav-mobile-nav">
-          <li><a href="/">Browse</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/api">Api</a></li>
-          <li><a href="/aontct">Contact</a></li>
+            <li><a href="{{site.baseurl}}/">Browse</a></li>
+            <li><a href="{{site.baseurl}}/about">About</a></li>
+            <li><a href="{{site.baseurl}}/api">Api</a></li>
+            <li><a href="{{site.baseurl}}/aontct">Contact</a></li>
           </ul>
         </div>
       </div>
     </div> 
     <div class="container main">
-          {{ content }}
+      {{ content }}
     </div>
   </body>
 </html>
