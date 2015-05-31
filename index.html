@@ -4,6 +4,20 @@ id: home
 title: Home
 ---
 
+<div class="nav-sec-abs">
+  <div class="row">
+    <div class="col12 center">
+      <div class="btns">
+        <a id="nav-results" href="#">
+          <span class="icon">H </span>
+        </a>
+        <a id="nav-map" class="open" href="#">
+          <span class="icon">E </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="card" class="closed">
   <div class="card-thumb">
     <img src="http://visionofbritain.org.uk/cgi-bin/mapserv?map=/usr/local/share/map-files/bound_map_page.map&layer=first_edition&mode=map&map_imagetype=png&mapext=3245206.796993333333257542108185589313507080078125+2725389.05279+3248660.130326666666742457891814410686492919921875+2728189.05279&map_size=370+300"
@@ -20,7 +34,7 @@ title: Home
     <img src="{{site.baseurl}}/img/pastplace-logo-vertical-large.png" alt="PastPlace logo">
     <p class="big">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
       Maecenas dignissim molestie turpis</p>
-    <a class="btn-secondary" href="/search/">SEARCH PLACE</a> 
+    <a id="welcome-btn-search" class="btn-secondary" href="#">SEARCH PLACE</a> 
     <a id="welcome-btn-map" class="btn" href="#">BROWSE MAP</a>
   </div>
 </div>
@@ -28,23 +42,102 @@ title: Home
 <div id="search-bottom" class="closed">
   <form action="/search/" method="get">
     <input type="text" class="width-50" placeholder="Search place">
-    <input type="submit" class="inside icon" value="Q">
+    <input id="search-submit" type="submit" class="inside icon" value="Q">
   </form>
+</div>
+
+
+<div id="results" class="closed">
+  <a class="place" href="#">
+    <div class="place-thumb">
+      <img src="http://visionofbritain.org.uk/cgi-bin/mapserv?map=/usr/local/share/map-files/bound_map_page.map&layer=first_edition&mode=map&map_imagetype=png&mapext=3245206.796993333333257542108185589313507080078125+2725389.05279+3248660.130326666666742457891814410686492919921875+2728189.05279&map_size=370+300"
+           alt="Newport, Shoropshire">
+    </div>
+    <div class="place-text">
+      <h3>Newport, Shoropshire</h3>
+      <p>United Kingdom, Europe</p>
+    </div>
+  </a>
+  <a class="place" href="#">
+    <div class="place-thumb">
+      <img src="http://www.visionofbritain.org.uk/images/counties/20003.png"
+           alt="Newport, Shoropshire">
+    </div>
+    <div class="place-text">
+      <h3>England</h3>
+      <p>United Kingdom, Europe</p>
+    </div>
+  </a>
+  <a class="place" href="#">
+    <div class="place-thumb">
+      <img src="http://www.visionofbritain.org.uk/images/counties/17437.png"
+           alt="Newport, Shoropshire">
+    </div>
+    <div class="place-text">
+      <h3>Hampshire England</h3>
+      <p>United Kingdom, Europe</p>
+    </div>
+  </a>
+  <a class="place" href="#">
+    <div class="place-thumb">
+      <img src="http://www.visionofbritain.org.uk/images/counties/1.png"
+           alt="Newport, Shoropshire">
+    </div>
+    <div class="place-text">
+      <h3>London England</h3>
+      <p>United Kingdom, Europe</p>
+    </div>
+  </a>
 </div>
 
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
 <script src="{{site.baseurl}}/js/map.js"></script>
 
-<script>
+<script type="text/javascript">
+  /* Welcom display map */
 document.getElementById('welcome-btn-map').onclick = function() {
-  document.getElementById('welcome').className += 'closed';
-  document.getElementById('welcome-bg').className += 'closed';
+  document.getElementById('welcome').className = 'closed';
+  document.getElementById('welcome-bg').className = 'closed';
   document.getElementById('search-bottom').className = '';
   document.getElementById('card').className = '';
   return false;
 };
+
+/* Welcome search */
+document.getElementById('welcome-btn-search').onclick = function() {
+  document.getElementById('search-bottom').className = '';
+  return false;
+};
+
+/* Search form submit */
+document.getElementById('search-submit').onclick = function() {
+  document.getElementById('welcome').className = 'closed';
+  document.getElementById('welcome-bg').className = 'closed';
+  document.getElementById('results').className = '';
+  return false;
+};
+
+/* Closes result list */
+document.getElementById('results').onclick = function() {
+  this.className = 'closed';
+};
+
+/* Closes card */
 document.getElementById('card').onclick = function() {
   this.className = 'closed';
+};
+
+/* Navigation for mobile devices */
+document.getElementById('nav-results').onclick = function() {
+  this.className = 'open';
+  document.getElementById('nav-map').className = '';
+  document.getElementById('results').className = '';
+};
+
+document.getElementById('nav-map').onclick = function() {
+  this.className = 'open';
+  document.getElementById('nav-results').className = '';
+  document.getElementById('results').className = 'closed';
 };
 </script>
