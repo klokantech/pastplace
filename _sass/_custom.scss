@@ -16,6 +16,12 @@ input.inside{
 
 body.home{overflow: hidden;}
 
+strong, b, .strong, .b {
+  color: $color-primary;
+}
+
+.contact input[type=text], .contact textarea{width: 100%;}
+.contact{margin: 20px auto; width: 40%;}
 .btn-blue{
   background: linear-gradient(to bottom, rgba(25,155,182,1) 0%, rgba(20,125,146,1) 100%);
   border: none;
@@ -141,7 +147,7 @@ body.home{overflow: hidden;}
 
   #welcome{
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 50%;
     height: 30%;
     width: 50%;
@@ -175,7 +181,7 @@ body.home{overflow: hidden;}
   transition: bottom .6s ease;
   text-align: center;
   padding-top: 15px;
-  z-index: 50;
+  z-index: 66;
   transition: bottom .6s ease;
   &.closed{
     bottom: -55px;
@@ -186,8 +192,8 @@ body.home{overflow: hidden;}
   position: absolute;
   min-height: 110px;
   width: 340px;
-  margin: 0 10px 0 0;
-  right: 10px;
+  margin: 0;
+  right: 2%;
   top: 120px;
   background-color: rgba(243,237,232, 0.8);
   border-radius: 5px;
@@ -272,6 +278,8 @@ body.home{overflow: hidden;}
 }
 
 #results{
+  overflow-y: auto;
+  overflow-x: hidden;
   position: absolute;
   top: 95px;
   left: 0;
@@ -284,15 +292,21 @@ body.home{overflow: hidden;}
 }
 
 .page{
+  width: 100%;
   background-color: #f4eee9; 
-  border: 1px solid #978d86;
+  padding: 10px; margin: 0;
+  border-bottom: 1px solid #d4cec8;
 }
+.pfooter{width: 100%; padding: 10px 40px; text-align: center;}
 
 @media (min-width: $sc-small) {
   .content{width: 100%;}
 }
 @media (min-width: $sc-medium) {
   #welcome-bg #welcome #welcome-btn-map{margin: 0 0 0 15px;}
+  .page, .pfooter{width: 80%; padding: 20px 40px; margin: 10px auto;}
+  .page{border: 1px solid #d4cec8;}
+  .pfooter{padding: 0 40px;}
 }
 @media (min-width: $sc-large) {
   .map-location{
@@ -322,6 +336,8 @@ body.home{overflow: hidden;}
       }
     }
   }
+  .page, .pfooter{width: 66%; padding: 20px 40px; margin: 30px auto 10px auto;}
+  .pfooter{padding: 0 40px; margin: 10px auto;}
 }
 @media (max-width: $sc-small) {
   #navbar-top{
@@ -355,6 +371,7 @@ body.home{overflow: hidden;}
       left: -100%;
     }
   }
+  .contact{width: 100%;}
 }
 /* Helpers */
 
@@ -385,7 +402,7 @@ body.home{overflow: hidden;}
 
 /* leaflet map */
 .leaflet-bar, .leaflet-control-layers {
-  background-color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
 }
 .leaflet-bottom .leaflet-control {
   margin-bottom: 60px !important;
@@ -403,4 +420,8 @@ body.home{overflow: hidden;}
 }
 .leaflet-control-zoom-out{
   background-position: 5px -20px !important;
+}
+
+.home .leaflet-control-container{
+  display: none;
 }

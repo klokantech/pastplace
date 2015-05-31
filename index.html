@@ -88,6 +88,36 @@ title: Home
       <p>United Kingdom, Europe</p>
     </div>
   </a>
+  <a class="place" href="#">
+    <div class="place-thumb">
+      <img src="http://www.visionofbritain.org.uk/images/counties/20003.png"
+           alt="Newport, Shoropshire">
+    </div>
+    <div class="place-text">
+      <h3>England</h3>
+      <p>United Kingdom, Europe</p>
+    </div>
+  </a>
+  <a class="place" href="#">
+    <div class="place-thumb">
+      <img src="http://www.visionofbritain.org.uk/images/counties/17437.png"
+           alt="Newport, Shoropshire">
+    </div>
+    <div class="place-text">
+      <h3>Hampshire England</h3>
+      <p>United Kingdom, Europe</p>
+    </div>
+  </a>
+  <a class="place" href="#">
+    <div class="place-thumb">
+      <img src="http://www.visionofbritain.org.uk/images/counties/1.png"
+           alt="Newport, Shoropshire">
+    </div>
+    <div class="place-text">
+      <h3>London England</h3>
+      <p>United Kingdom, Europe</p>
+    </div>
+  </a>
 </div>
 
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
@@ -95,12 +125,13 @@ title: Home
 <script src="{{site.baseurl}}/js/map.js"></script>
 
 <script type="text/javascript">
-  /* Welcom display map */
+/* Welcom display map */
 document.getElementById('welcome-btn-map').onclick = function() {
   document.getElementById('welcome').className = 'closed';
   document.getElementById('welcome-bg').className = 'closed';
   document.getElementById('search-bottom').className = '';
   document.getElementById('card').className = '';
+  document.querySelector('.leaflet-control-container').style.display = 'block';
   return false;
 };
 
@@ -115,6 +146,7 @@ document.getElementById('search-submit').onclick = function() {
   document.getElementById('welcome').className = 'closed';
   document.getElementById('welcome-bg').className = 'closed';
   document.getElementById('results').className = '';
+  document.querySelector('.leaflet-control-container').style.display = 'block';
   return false;
 };
 
