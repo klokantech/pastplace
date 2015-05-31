@@ -6,7 +6,7 @@ $color-gray-dark: #a29d97;
 $color-gray: #898989;
 $color-gray-light: #f3f3f3;
 
-$color-success: #00AA4A;
+$color-success: #8dbd53;
 $color-warning: #EF8A00;
 $color-danger: #EF3200;
 $color-code: #dd1144;
@@ -143,13 +143,15 @@ $hr-color: $text-color;
 
 /* Table */
 
-$table-color: #393939;
-$table-head-bg: $color-gray-light;
-$table-color-border: mix($color-gray-dark, $color-gray-light);
-$table-fontsize: $font-size;
-$table-hover-color: $color-gray-light;
-$table-padding: 10px;
+$table-color: #574f45;
+$table-head-bg: #e4d6c9;
+$table-color-border: #c6beb7;
+$table-fontsize: 12px;
+$table-hover-color: #e4d6c9;
+$table-padding: 4px;
 
+$even-bg-color: #eee5de;
+$odd-bg-color: #f6f2ef;
 
 /* Forms */
 $input-color: $text-color;

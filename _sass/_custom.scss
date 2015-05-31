@@ -79,10 +79,12 @@ body.home{overflow: hidden;}
 .content{
   .text{
     padding: 3%;
+    /*padding-top: 65px;*/
     h1, h2{
       margin-bottom: 5px;
     }
-    h3{
+    .subtitle{
+      font-size: 18px;
       margin-top: 0;
       padding-bottom: 10px;
       border-bottom: 1px solid #ddd6d1; 
@@ -101,9 +103,9 @@ body.home{overflow: hidden;}
   -webkit-box-shadow: 0px 1px 3px 0px rgba(158,158,158,1);
   -moz-box-shadow: 0px 1px 3px 0px rgba(158,158,158,1);
   box-shadow: 0px 1px 3px 0px rgba(158,158,158,1);
-  z-index: 100;
+/*  z-index: 100;
   position: absolute;
-  width: 100%;
+  width: 100%;*/
   height: 65px;
 }
 
@@ -115,7 +117,7 @@ body.home{overflow: hidden;}
 .map-location{
   width: 100%; 
   height: 240px;
-  margin-top: 65px;
+  margin-top: -5px;
 }
 
 #welcome-bg{
@@ -205,14 +207,9 @@ body.home{overflow: hidden;}
 }
 
 @media (min-width: $sc-small) {
-
   .content{width: 100%;}
-
-}
+  }
 @media (min-width: $sc-medium) {
-  /*  #navbar-top{
-      border-bottom: 10px $color-primary solid;
-    }*/
 }
 @media (min-width: $sc-large) {
   .map-location{
