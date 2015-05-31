@@ -103,9 +103,9 @@ body.home{overflow: hidden;}
   -webkit-box-shadow: 0px 1px 3px 0px rgba(158,158,158,1);
   -moz-box-shadow: 0px 1px 3px 0px rgba(158,158,158,1);
   box-shadow: 0px 1px 3px 0px rgba(158,158,158,1);
-/*  z-index: 100;
-  position: absolute;
-  width: 100%;*/
+  /*  z-index: 100;
+    position: absolute;
+    width: 100%;*/
   height: 65px;
 }
 
@@ -134,7 +134,7 @@ body.home{overflow: hidden;}
 
   #welcome{
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     height: 30%;
     width: 50%;
@@ -142,16 +142,17 @@ body.home{overflow: hidden;}
 
     &.closed{display: none;}
 
-    #welcome-btn-map{margin-left: 15px;}
+    #welcome-btn-map{margin: 15px 0 0 0;}
 
     img{
-      margin-bottom: 20px;
-      width: 270px;
-      height: 110px;
+      margin-bottom: 10px;
+      width: 170px;
+      height: 127px;
     }
 
     p{
       padding-bottom: 40px;
+      font-size: 14px;
       color: $color-primary;
     }
   }
@@ -175,8 +176,9 @@ body.home{overflow: hidden;}
 
 #card{
   position: absolute;
-  width: 360px;
-  margin-left: -180px;
+  min-height: 110px;
+  width: 340px;
+  margin: 0 10px 0 -170px;
   left: 50%;
   top: 120px;
   background-color: rgba(243,237,232, 0.8);
@@ -184,12 +186,29 @@ body.home{overflow: hidden;}
   z-index: 50;
   border: 1px solid $color-primary;
   box-shadow: #999 0 0 5px;
-  text-align: center;
+
+  .card-thumb{ 
+    position: absolute;
+    margin: 10px;
+    width: 60px; height: 60px;
+    img{
+      width: 100%; height: 100%;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;   
+    }
+  }
+  .card-text{
+    margin-left: 80px;
+    min-height: 50px;
+    h3{ margin-bottom: 5px;}
+  }
 
   .card-link{
+    text-align: center;
     display: block;
     margin: 0 0 -1px -1px;
-    width: 360px;
+    width: 340px;
     border-top: 1px solid $color-primary;
     background-color: rgba(243,237,232, 0.8);
     padding: 5px 0;
@@ -208,8 +227,9 @@ body.home{overflow: hidden;}
 
 @media (min-width: $sc-small) {
   .content{width: 100%;}
-  }
+}
 @media (min-width: $sc-medium) {
+  #welcome-bg #welcome #welcome-btn-map{margin: 0 0 0 15px;}
 }
 @media (min-width: $sc-large) {
   .map-location{
@@ -225,6 +245,20 @@ body.home{overflow: hidden;}
     display: inline-block; 
   }
   .content{width: 74%; float: left;}
+
+  #welcome-bg{
+    #welcome{
+      top: 40%;
+      left: 50%;
+      height: 30%;
+      width: 50%;
+      margin: -10% 0 0 -25%;
+      img{
+        width: 270px;
+        height: 202px;
+      }
+    }
+  }
 }
 
 /* Helpers */
@@ -252,4 +286,26 @@ body.home{overflow: hidden;}
 
 .icon{
   vertical-align: sub;
+}
+
+/* leaflet map */
+.leaflet-bar, .leaflet-control-layers {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+.leaflet-bottom .leaflet-control {
+  margin-bottom: 60px !important;
+}
+.leaflet-bar a, .leaflet-control-layers-toggle, .leaflet-popup-close-button, 
+.map-tooltip.closable .close, .mapbox-button-icon:before, .mapbox-icon {
+  width: 36px !important;
+  height: 36px !important;
+}
+/*.leaflet-control-zoom-in, .leaflet-control-zoom-out{
+  background: transparent !important;
+}*/
+.leaflet-control-zoom-in{
+  background-position: 5px 5px !important;
+}
+.leaflet-control-zoom-out{
+  background-position: 5px -20px !important;
 }
