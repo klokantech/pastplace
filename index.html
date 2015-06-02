@@ -34,13 +34,13 @@ title: Home
     <img src="{{site.baseurl}}/img/pastplace-logo-vertical-large.png" alt="PastPlace logo">
     <p class="big">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
       Maecenas dignissim molestie turpis</p>
-    <a id="welcome-btn-search" class="btn-secondary" href="#">SEARCH PLACE</a> 
+    <a id="welcome-btn-search" class="btn-secondary" href="#">FIND A PLACE</a> 
     <a id="welcome-btn-map" class="btn" href="#">BROWSE MAP</a>
   </div>
 </div>
 <div id="map" class="map-browse"></div>
 <div id="search-bottom" class="closed">
-  <form action="/search/" method="get">
+  <form action="/search/" method="get" id="search-form">
     <input type="text" class="width-50" placeholder="Search place">
     <input id="search-submit" type="submit" class="inside icon" value="Q">
   </form>
@@ -125,19 +125,29 @@ title: Home
 <script src="{{site.baseurl}}/js/map.js"></script>
 
 <script type="text/javascript">
-/* Welcom display map */
-document.getElementById('welcome-btn-map').onclick = function() {
+function hideWelcome() {
   document.getElementById('welcome').className = 'closed';
   document.getElementById('welcome-bg').className = 'closed';
   document.getElementById('search-bottom').className = '';
-  document.getElementById('card').className = '';
   document.querySelector('.leaflet-control-container').style.display = 'block';
+}
+
+/* Welcom display map */
+document.getElementById('welcome-btn-map').onclick = function() {
+  hideWelcome();
+  document.getElementById('card').className = '';
   return false;
 };
 
 /* Welcome search */
 document.getElementById('welcome-btn-search').onclick = function() {
   document.getElementById('search-bottom').className = '';
+
+  this.onclick = function() {
+    hideWelcome();
+    document.getElementById('card').className = '';
+    document.getElementById('results').className = '';
+  };
   return false;
 };
 
