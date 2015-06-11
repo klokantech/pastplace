@@ -4,21 +4,7 @@ id: home
 title: Home
 ---
 
-<div class="nav-sec-abs">
-  <div class="row">
-    <div class="col12 center">
-      <div class="btns">
-        <a id="nav-results" href="#">
-          <span class="icon">H </span>
-        </a>
-        <a id="nav-map" class="open" href="#">
-          <span class="icon">E </span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="card" class="closed">
+<a id="card" class="closed" href="{{site.baseurl}}/place/location/">
   <div class="card-thumb">
     <img src="http://visionofbritain.org.uk/cgi-bin/mapserv?map=/usr/local/share/map-files/bound_map_page.map&layer=first_edition&mode=map&map_imagetype=png&mapext=3245206.796993333333257542108185589313507080078125+2725389.05279+3248660.130326666666742457891814410686492919921875+2728189.05279&map_size=370+300"
          alt="Newport, Shoropshire">
@@ -27,8 +13,9 @@ title: Home
     <h3>Newport, Shoropshire</h3>
     <p>United Kingdom, Europe</p>
   </div>
-  <a href="{{site.baseurl}}/place/location/" class="card-link">tap to see more</a>
-</div>
+  <div class="card-link">tap to see more</div>
+</a>
+
 <div id="welcome-bg">
   <div id="welcome">
     <img src="{{site.baseurl}}/img/pastplace-logo-vertical-large.png" alt="PastPlace logo">
@@ -39,100 +26,31 @@ title: Home
   </div>
 </div>
 <div id="map" class="map-browse"></div>
+<div id="btn-geolocation">n</div>
 <div id="search-bottom" class="closed">
-  <form action="/search/" method="get" id="search-form">
-    <input type="text" class="width-50" placeholder="Search place">
+  <form action="/results/" method="get" id="search-form">
+    <input type="text" name="q" class="width-50" placeholder="Find a place" required>
     <input id="search-submit" type="submit" class="inside icon" value="Q">
   </form>
 </div>
 
-
-<div id="results" class="closed">
-  <a class="place" href="#">
-    <div class="place-thumb">
-      <img src="http://visionofbritain.org.uk/cgi-bin/mapserv?map=/usr/local/share/map-files/bound_map_page.map&layer=first_edition&mode=map&map_imagetype=png&mapext=3245206.796993333333257542108185589313507080078125+2725389.05279+3248660.130326666666742457891814410686492919921875+2728189.05279&map_size=370+300"
-           alt="Newport, Shoropshire">
-    </div>
-    <div class="place-text">
-      <h3>Newport, Shoropshire</h3>
-      <p>United Kingdom, Europe</p>
-    </div>
-  </a>
-  <a class="place" href="#">
-    <div class="place-thumb">
-      <img src="http://www.visionofbritain.org.uk/images/counties/20003.png"
-           alt="Newport, Shoropshire">
-    </div>
-    <div class="place-text">
-      <h3>England</h3>
-      <p>United Kingdom, Europe</p>
-    </div>
-  </a>
-  <a class="place" href="#">
-    <div class="place-thumb">
-      <img src="http://www.visionofbritain.org.uk/images/counties/17437.png"
-           alt="Newport, Shoropshire">
-    </div>
-    <div class="place-text">
-      <h3>Hampshire England</h3>
-      <p>United Kingdom, Europe</p>
-    </div>
-  </a>
-  <a class="place" href="#">
-    <div class="place-thumb">
-      <img src="http://www.visionofbritain.org.uk/images/counties/1.png"
-           alt="Newport, Shoropshire">
-    </div>
-    <div class="place-text">
-      <h3>London England</h3>
-      <p>United Kingdom, Europe</p>
-    </div>
-  </a>
-  <a class="place" href="#">
-    <div class="place-thumb">
-      <img src="http://www.visionofbritain.org.uk/images/counties/20003.png"
-           alt="Newport, Shoropshire">
-    </div>
-    <div class="place-text">
-      <h3>England</h3>
-      <p>United Kingdom, Europe</p>
-    </div>
-  </a>
-  <a class="place" href="#">
-    <div class="place-thumb">
-      <img src="http://www.visionofbritain.org.uk/images/counties/17437.png"
-           alt="Newport, Shoropshire">
-    </div>
-    <div class="place-text">
-      <h3>Hampshire England</h3>
-      <p>United Kingdom, Europe</p>
-    </div>
-  </a>
-  <a class="place" href="#">
-    <div class="place-thumb">
-      <img src="http://www.visionofbritain.org.uk/images/counties/1.png"
-           alt="Newport, Shoropshire">
-    </div>
-    <div class="place-text">
-      <h3>London England</h3>
-      <p>United Kingdom, Europe</p>
-    </div>
-  </a>
-</div>
-
-<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
 <script src="{{site.baseurl}}/js/map.js"></script>
 
 <script type="text/javascript">
   var baseurl = '{{site.baseurl}}';
-  initMap(baseurl);
+  initMap(baseurl, true);
   
 function hideWelcome() {
   document.getElementById('welcome').className = 'closed';
   document.getElementById('welcome-bg').className = 'closed';
   document.getElementById('search-bottom').className = '';
   document.querySelector('.leaflet-control-container').style.display = 'block';
+  document.getElementById('btn-geolocation').style.display = 'block';
+  
+  //show overlay
+  places.addTo(map);
 }
 
 /* Welcom display map */
@@ -152,37 +70,5 @@ document.getElementById('welcome-btn-search').onclick = function() {
     document.getElementById('results').className = '';
   };
   return false;
-};
-
-/* Search form submit */
-document.getElementById('search-submit').onclick = function() {
-  document.getElementById('welcome').className = 'closed';
-  document.getElementById('welcome-bg').className = 'closed';
-  document.getElementById('results').className = '';
-  document.querySelector('.leaflet-control-container').style.display = 'block';
-  return false;
-};
-
-/* Closes result list */
-document.getElementById('results').onclick = function() {
-  this.className = 'closed';
-};
-
-/* Closes card */
-document.getElementById('card').onclick = function() {
-  this.className = 'closed';
-};
-
-/* Navigation for mobile devices */
-document.getElementById('nav-results').onclick = function() {
-  this.className = 'open';
-  document.getElementById('nav-map').className = '';
-  document.getElementById('results').className = '';
-};
-
-document.getElementById('nav-map').onclick = function() {
-  this.className = 'open';
-  document.getElementById('nav-results').className = '';
-  document.getElementById('results').className = 'closed';
 };
 </script>
