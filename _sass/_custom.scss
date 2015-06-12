@@ -30,7 +30,7 @@ strong, b, .strong, .b {
 }
 
 #navbar-top {
-  border-bottom: 1px $color-primary solid;
+  border-bottom: 1px #c3bcb6 solid;
   background: #f3ede8;
   background: -moz-linear-gradient(top, #f3ede8 0%, #ede3db 19%, #e9ddd3 31%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, #f3ede8), color-stop(19%, #ede3db), color-stop(31%, #e9ddd3));
@@ -132,6 +132,13 @@ strong, b, .strong, .b {
   height: 240px;
   margin-top: -5px;
 }
+.map-results{
+  position: absolute;
+  left: 400px;
+  top: 115px;
+  bottom: 0;
+  right: 0;
+}
 
 #welcome-bg{
   position: absolute;
@@ -162,7 +169,6 @@ strong, b, .strong, .b {
       width: 170px;
       height: 127px;
     }
-
     p{
       padding-bottom: 20px;
       font-size: 14px;
@@ -181,7 +187,7 @@ strong, b, .strong, .b {
   transition: bottom .6s ease;
   text-align: center;
   padding-top: 15px;
-  z-index: 66;
+  z-index: 1009;
   transition: bottom .6s ease;
   &.closed{
     bottom: -55px;
@@ -192,14 +198,19 @@ strong, b, .strong, .b {
   position: absolute;
   min-height: 110px;
   width: 340px;
-  margin: 0 0 0 -180px;
-  left: 50%;
+  margin: 0 -170px 0 0;
+  right: 50%;
   top: 120px;
   background-color: rgba(243,237,232, 0.8);
   border-radius: 5px;
   z-index: 50;
   border: 1px solid $color-primary;
   box-shadow: #999 0 0 5px;
+  &.cright{
+    right: 10px;
+    top: 150px;
+    margin: 0;
+  }
 
   .card-thumb{
     position: absolute;
@@ -258,12 +269,12 @@ strong, b, .strong, .b {
     margin-left: 80px;
     min-height: 50px;
     min-height: 80px;
-    p{color: $color-primary;}
+    p{color: #b09e86;}
     h3{
       margin-bottom: 5px;
-      &:hover{color: #199bb6;}
     }
   }
+  &:hover h3{color: #199bb6;}
   .place-link{
     position: absolute;
     display: inline-block;
@@ -282,17 +293,18 @@ strong, b, .strong, .b {
 }
 
 #results{
+  display: block;
   overflow-y: auto;
   overflow-x: hidden;
   position: absolute;
-  top: 95px;
+  top: 135px;
   left: 0;
   width: 400px;
   bottom: 0;
-  background-color: $body-bg;
+  background-color: #efe7e1;
   z-index: 60;
   transition: left .6s ease;
-  &.closed{left: -400px;}
+  z-index: 1005;
 }
 
 .page{
@@ -302,7 +314,16 @@ strong, b, .strong, .b {
   border-bottom: 1px solid #d4cec8;
 }
 .pfooter{width: 100%; padding: 10px 40px; text-align: center;}
-
+.map-results{left: 0;}
+.message{
+  position: absolute ;
+  top: 85px;
+  left: 0; right: 0;
+  height: 50px;
+  z-index: 1002;
+  text-align: center;
+}
+.bg-light{background-color: #e9ddd3;}
 @media (min-width: $sc-small) {
   #welcome-bg #welcome #welcome-btn-map{margin: 0 0 0 15px;}
   .content{width: 100%;}
@@ -372,40 +393,31 @@ strong, b, .strong, .b {
   #results{
     width: 100%;
     &.closed{
-      left: -100%;
+      display: none;
     }
   }
   .contact{width: 100%;}
   .map-browse{
     top: 50px;
   }
+  .message {
+    top: 95px;
+    height: 40px;
+    padding: 10px;
+  }
 }
 /* Helpers */
 
 @media (max-width: $sc-medium) {
-  .mobile-no{
-    display: none;
-  }
-  .mobile{
-    display: inline-block;
-  }
+  .mobile-no{display: none;}
+  .mobile{display: inline-block;}
 }
 @media (min-width: $sc-small) {
-  .mobile-no{
-    display: inline-block;
-  }
-  .mobile{
-    display: none;
-  }
+  .mobile-no{display: inline-block;}
+  .mobile{display: none;}
 }
-
-.bg-light{
-  background-color: #eadfd8;
-}
-
-.icon{
-  vertical-align: sub;
-}
+.bg-light{background-color: #eadfd8;}
+.icon{vertical-align: sub;}
 
 /* leaflet map */
 .leaflet-control{ position: absolute;}
