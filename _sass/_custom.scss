@@ -315,6 +315,12 @@ strong, b, .strong, .b {
 }
 .pfooter{width: 100%; padding: 10px 40px; text-align: center;}
 .map-results{left: 0;}
+#pl-links, #pl-location, #pl-units, #pl-names{
+  display: block;
+}
+#pl-links.closed, #pl-location.closed, #pl-units.closed, #pl-names.closed{
+  display: none;
+}
 .message{
   position: absolute ;
   top: 85px;
