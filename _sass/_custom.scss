@@ -20,6 +20,10 @@ strong, b, .strong, .b {
   color: $color-primary;
 }
 
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-bottom: 15px;
+}
+
 .contact input[type=text], .contact textarea{width: 100%;}
 .contact{margin: 20px auto; width: 40%;}
 .btn-blue{
@@ -81,7 +85,22 @@ strong, b, .strong, .b {
     }
   }
 }
-
+.nav-sticky{
+  width: 150px; 
+  background-color: #f4eee9; 
+  margin-bottom: 10px;
+  .nav-sec-vert{
+    margin: 0;
+    a{
+      padding: 10px;
+      border-left: 1px solid #ddd6d1;
+      border-right: 1px solid #ddd6d1;
+      &:first-child{
+        border-top: 1px solid #ddd6d1;
+      }
+    }
+  }
+}
 .content{
   .text{
     padding: 3%;
@@ -333,11 +352,12 @@ strong, b, .strong, .b {
 @media (min-width: $sc-small) {
   #welcome-bg #welcome #welcome-btn-map{margin: 0 0 0 15px;}
   .content{width: 100%;}
+  .page{padding: 20px;}
 }
 @media (min-width: $sc-medium) {
-  .page, .pfooter{width: 80%; padding: 20px 40px; margin: 10px auto;}
-  .page{border: 1px solid #d4cec8;}
-  .pfooter{padding: 0 40px;}
+  .page, .pfooter{width: 80%; padding: 20px 40px;}
+  .page{border-left: 1px solid #d4cec8; border-right: 1px solid #d4cec8; margin: 0 auto 10px auto}
+  .pfooter{padding: 0 40px; margin: 10px auto}
 }
 @media (min-width: $sc-large) {
   .map-location{
@@ -367,8 +387,12 @@ strong, b, .strong, .b {
       }
     }
   }
-  .page, .pfooter{width: 66%; padding: 20px 40px; margin: 30px auto 10px auto;}
+  .page, .pfooter{width: 66%; padding: 20px 40px; margin: 0 auto 10px auto;}
   .pfooter{padding: 0 40px; margin: 10px auto;}
+  .nav-sticky{
+    margin-left: -190px; 
+    position: absolute;
+  }
 }
 @media (max-width: $sc-small) {
   #navbar-top{
