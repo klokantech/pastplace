@@ -6,16 +6,16 @@ layout: default
   <div class="row">
     <div class="col12 center">
       <div class="btns">
-        <a href="#" class="btn-location">
+        <a href="#location" class="btn-location">
           <span class="icon">G </span> <span class="mobile-no">Location</span>
         </a>
-        <a href="#" class="btn-units">
+        <a href="#units" class="btn-units">
           <span class="icon">c </span> <span class="mobile-no">Units</span>
         </a>
-        <a href="#" class="btn-links">
+        <a href="#links" class="btn-links">
           <span class="icon">l </span> <span class="mobile-no">Links</span>
         </a>
-        <a href="#" class="btn-names">
+        <a href="#names" class="btn-names">
           <span class="icon">8 </span> <span class="mobile-no">Names</span>
         </a>
       </div>
@@ -31,16 +31,16 @@ layout: default
           <input type="submit" class="inside icon" value="Q">
         </form>
         <div class="nav-sec-vert">
-          <a href="#" class="btn-location">
+          <a href="#location" class="btn-location">
             <span class="icon">G </span> Location
           </a>
-          <a href="#" class="btn-units">
+          <a href="#units" class="btn-units">
             <span class="icon">c </span> Units
           </a>
-          <a href="#" class="btn-links">
+          <a href="#links" class="btn-links">
             <span class="icon">l </span> Links
           </a>
-          <a href="#" class="btn-names">
+          <a href="#names" class="btn-names">
             <span class="icon">8 </span> Names
           </a>
         </div>
@@ -52,13 +52,14 @@ layout: default
       </div>
       <div class="content">
         <div id="pl-location">
+          <!-- Location -->
           <div id="map" class="map-location"></div>
           <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
           <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
           <script src="{{site.baseurl}}/js/map.js"></script>
           <script>
-            var baseurl = '{{site.baseurl}}';
-            initMap(baseurl);
+var baseurl = '{{site.baseurl}}';
+initMap(baseurl);
           </script>
 
           <div class="text">
@@ -67,8 +68,10 @@ layout: default
             <p>Lorem ipsum <small>dolor sit amet</small>, consectetur <big>adipiscing elit</big>. Maecenas dignissim molestie turpis, vitae faucibus sem consectetur ut. Vestibulum vitae tellus tellus. Nullam mollis, ligula non porttitor laoreet, sem metus semper neque, nec condimentum magna velit id risus. Nam cursus laoreet luctus. Aliquam ex tortor, congue nec interdum sit amet, euismod pellentesque arcu. Vivamus mi mauris, volutpat a orci ut, sodales rhoncus magna. Pellentesque posuere vel nulla ut accumsan. Aenean at ligula odio. Pellentesque pulvinar augue neque, sed ultricies enim viverra in. Ut quis nibh orci.</p>
             <p>In vel convallis massa. Duis ultrices libero id augue ullamcorper vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce id felis vel metus efficitur faucibus ut at nisi. Proin eros nisl, ultricies quis porta sed, mollis a erat. Duis ex nisl, pharetra maximus lacus nec, porttitor interdum diam. Nulla mattis eu risus sed imperdiet.</p>
           </div>
+          <!-- end location -->
         </div>
         <div id="pl-units" class="closed">
+          <!-- units -->
           <div class="text">
             <h1>Portsmouth</h1>
             <h2 class="subtitle secondary">Units</h2>
@@ -118,16 +121,20 @@ layout: default
             </table>
 
           </div>
+          <!-- end units -->
         </div>
         <div id="pl-links" class="closed">
+          <!-- links -->
           <div class="text">
             <h1>Portsmouth</h1>
             <h2 class="subtitle secondary">Links</h2>
             <p>Lorem ipsum <small>dolor sit amet</small>, consectetur <big>adipiscing elit</big>. Maecenas dignissim molestie turpis, vitae faucibus sem consectetur ut. Vestibulum vitae tellus tellus. Nullam mollis, ligula non porttitor laoreet, sem metus semper neque, nec condimentum magna velit id risus. Nam cursus laoreet luctus. Aliquam ex tortor, congue nec interdum sit amet, euismod pellentesque arcu. Vivamus mi mauris, volutpat a orci ut, sodales rhoncus magna. Pellentesque posuere vel nulla ut accumsan. Aenean at ligula odio. Pellentesque pulvinar augue neque, sed ultricies enim viverra in. Ut quis nibh orci.</p>
             <p>In vel convallis massa. Duis ultrices libero id augue ullamcorper vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce id felis vel metus efficitur faucibus ut at nisi. Proin eros nisl, ultricies quis porta sed, mollis a erat. Duis ex nisl, pharetra maximus lacus nec, porttitor interdum diam. Nulla mattis eu risus sed imperdiet.</p>
           </div>
+          <!-- end links -->
         </div>
         <div id="pl-names" class="closed">
+          <!-- names -->
           <div class="text">
             <h1>Portsmouth</h1>
             <h2 class="subtitle secondary">Names</h2>
@@ -548,6 +555,7 @@ layout: default
             <p>Date accessed: 31st May 2015</p>
 
           </div>
+          <!-- end names -->
         </div>
       </div>
     </div>
@@ -555,38 +563,44 @@ layout: default
 </div>
 
 <script>
+  /* Handle hash */
+  var hash = document.location.hash.substr(1);
+  if (hash === 'units' || hash === 'links' || hash === 'location' || hash === 'names') {
+    display('pl-' + hash);
+  }
+
   /* tabswitcher */
   var btnsl = document.getElementsByClassName('btn-location');
   btnsl[0].onclick = function() {
-    display('pl-location', this);
+    display('pl-location');
   };
   btnsl[1].onclick = function() {
-    display('pl-location', this);
+    display('pl-location');
   };
   var btnsu = document.getElementsByClassName('btn-units');
   btnsu[0].onclick = function() {
-    display('pl-units', this);
+    display('pl-units');
   };
   btnsu[1].onclick = function() {
-    display('pl-units', this);
+    display('pl-units');
   };
 
   var btnsli = document.getElementsByClassName('btn-links');
   btnsli[0].onclick = function() {
-    display('pl-links', this);
+    display('pl-links');
   };
   btnsli[1].onclick = function() {
-    display('pl-links', this);
+    display('pl-links');
   };
   var btnsn = document.getElementsByClassName('btn-names');
   btnsn[0].onclick = function() {
-    display('pl-names', this);
+    display('pl-names');
   };
   btnsn[1].onclick = function() {
-    display('pl-names', this);
+    display('pl-names');
   };
 
-  function display(element, btn) {
+  function display(element) {
     document.getElementById('pl-location').className = 'closed';
     document.getElementById('pl-units').className = 'closed';
     document.getElementById('pl-links').className = 'closed';
