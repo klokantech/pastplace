@@ -105,7 +105,6 @@ h1, .h1, h2, .h2, h3, .h3 {
 .content{
   .text{
     padding: 3%;
-    /*padding-top: 65px;*/
     h1, h2{
       margin-bottom: 5px;
     }
@@ -129,9 +128,6 @@ h1, .h1, h2, .h2, h3, .h3 {
   -webkit-box-shadow: 0px 1px 3px 0px rgba(158,158,158,1);
   -moz-box-shadow: 0px 1px 3px 0px rgba(158,158,158,1);
   box-shadow: 0px 1px 3px 0px rgba(158,158,158,1);
-  /*  z-index: 100;
-    position: absolute;
-    width: 100%;*/
   height: 65px;
 }
 
@@ -141,6 +137,9 @@ h1, .h1, h2, .h2, h3, .h3 {
   left: 0; right: 0;
   height: 50px;
   .col12{padding: 5px;}
+}
+#map{
+  z-index: 10;
 }
 .map-browse{
   position: absolute;
@@ -188,6 +187,7 @@ h1, .h1, h2, .h2, h3, .h3 {
       margin-bottom: 10px;
       width: 170px;
       height: 127px;
+      display: inline-block;
     }
     p{
       padding-bottom: 20px;
@@ -245,11 +245,13 @@ h1, .h1, h2, .h2, h3, .h3 {
   }
   .card-text{
     margin-left: 80px;
-    min-height: 50px;
+    min-height: 55px;
     h3{ margin-bottom: 5px;}
     p{ color: $text-color; }
   }
   .card-link{
+    position: absolute;
+    bottom: 0;
     text-align: center;
     display: block;
     margin: 0 0 -1px -1px;
@@ -395,7 +397,7 @@ h1, .h1, h2, .h2, h3, .h3 {
     position: absolute;
   }
 }
-@media (max-width: $sc-small) {
+@media (max-width: $sc-small), (max-height: $sc-small) {
   #navbar-top{
     height: 50px;
     .logo{
@@ -436,9 +438,16 @@ h1, .h1, h2, .h2, h3, .h3 {
     height: 40px;
     padding: 10px;
   }
+  #card{top: 60px;}
+}
+@media (max-height: $sc-small){
+  #welcome p{display: none;}
+  #card{
+    min-height: 85px;
+    .card-link{display: none;}
+  }
 }
 /* Helpers */
-
 @media (max-width: $sc-medium) {
   .mobile-no{display: none;}
   .mobile{display: inline-block;}
@@ -487,7 +496,6 @@ h1, .h1, h2, .h2, h3, .h3 {
 #btn-geolocation, .leaflet-control-layers, .leaflet-control-zoom a{
   background-color: rgba(255, 255, 255, 0.8) !important;
   color: #453e35 !important;
-
 }
 .leaflet-control-layers:before{
   font-family: icons;
@@ -502,7 +510,4 @@ h1, .h1, h2, .h2, h3, .h3 {
 .leaflet-control-layers-toggle{
   background-image: none !important;
 }
-
-.home .leaflet-control-container{
-  display: none;
-}
+.home .leaflet-control-container{display: none;}
