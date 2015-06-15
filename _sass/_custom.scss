@@ -326,7 +326,6 @@ h1, .h1, h2, .h2, h3, .h3 {
   background-color: #efe7e1;
   z-index: 60;
   transition: left .6s ease;
-  z-index: 1005;
 }
 
 .page{
@@ -348,7 +347,7 @@ h1, .h1, h2, .h2, h3, .h3 {
   top: 85px;
   left: 0; right: 0;
   height: 50px;
-  z-index: 1002;
+  z-index: 12;
   text-align: center;
 }
 .bg-light{background-color: #e9ddd3;}
@@ -509,5 +508,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 .leaflet-control-layers-expanded:before{content:"";}
 .leaflet-control-layers-toggle{
   background-image: none !important;
+  width: 36px !important;
+  height: 36px !important;
 }
 .home .leaflet-control-container{display: none;}
